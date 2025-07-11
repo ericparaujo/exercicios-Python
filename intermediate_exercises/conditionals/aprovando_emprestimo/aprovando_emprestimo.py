@@ -28,32 +28,28 @@ def condicoes_financiamento():
         return f'\n{cores('amarelo')}Salario nao comporta o valor da casa!{cores('limpar')}'
 
 
+
+def validar_repetir():
+    while True:
+        continuar = str(input('Deseja repetir analise [S/N]: ')).strip().upper()
+        if continuar in ['S', 'N']:
+            return continuar
+        print('Opcao invalida! tente novamente')
+
+
+def deseja_repetir():
+    while True:
+        bem_vindo()
+        print(condicoes_financiamento())
+        repetir = validar_repetir()
+
+        if repetir == 'N':
+            print('Fim da operacao!')
+            break
+
+
 def main():
-    def deseja_continuar():
-
-
-      while True:
-
-            bem_vindo()
-            print(condicoes_financiamento())
-            continuar = str(input('deseja continuar [S/N]: ')).strip().upper()
-
-            if continuar not in ['S', 'N']:
-                print('Opção invalida! tente novamente')
-
-
-            if continuar == 'N':
-                print('Fim da operacao')
-                break
-
-
-    deseja_continuar()
-
-
-
-    #bem_vindo()
-    #print(condicoes_financiamento())
-
+    deseja_repetir()
 
 if __name__ == '__main__':
     main()
