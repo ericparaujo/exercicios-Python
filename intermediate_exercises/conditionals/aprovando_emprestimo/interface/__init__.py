@@ -1,7 +1,7 @@
 def bem_vindo():
     print(f'{cores('amarelo')}╔{'═' * 78}╗')
     print('║', f'{cores('vermelho')}SISTEMA DE APROVACAO DE EMPRESTIMO{cores('amarelo')}'.center(86), '║')
-    print(f'╚{'═' * 78}╝')
+    print(f'╚{'═' * 78}╝{cores('limpar')}')
 
 
 def cores(tinta):
