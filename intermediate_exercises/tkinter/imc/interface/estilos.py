@@ -1,3 +1,6 @@
+"""
+MODULO DE ESTILIZACAO
+"""
 
 def configurar_fontes():
     return {
