@@ -7,6 +7,7 @@ Receba peso e altura, calcule o IMC e apresente a classificação de acordo com 
 MODULO DA LOGICA
 """
 #from exercicios2.imc.interface import cabecalho
+from tkinter import messagebox
 
 def entrada_dados(peso_entrada, altura_entrada):
     peso = float(peso_entrada.get())
@@ -22,17 +23,21 @@ def calculo_imc(peso, altura):
 
 
 def condicionais(peso_entrada, altura_entrada):
-    peso, altura = entrada_dados(peso_entrada, altura_entrada)
-    imc = calculo_imc(peso, altura)
+    try:
+        peso, altura = entrada_dados(peso_entrada, altura_entrada)
+        imc = calculo_imc(peso, altura)
 
-    if imc <= 18.5:
-        return 'abaixo do peso'
-    elif 18.6 <= imc <= 24.9:
-        return 'peso normal'
-    elif 25 <= imc <= 29.9:
-        return 'sobrepeso'
-    elif imc >= 30:
-        return 'obeso'
+        if imc <= 18.5:
+            return f'{imc:.2f}\n abaixo do peso'
+        elif 18.6 <= imc <= 24.9:
+            return f'{imc:.2f}\n peso normal'
+        elif 25 <= imc <= 29.9:
+            return f'{imc:.2f}\n sobrepeso'
+        elif imc >= 30:
+            return f'{imc:.2f}\n obeso'
+
+    except ValueError:
+        messagebox.showerror('erro', 'Valor incorreto, favor tente novamente!')
 
 
 
