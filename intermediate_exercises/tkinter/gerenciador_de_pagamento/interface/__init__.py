@@ -9,8 +9,10 @@ def janela_principal():
     texto = estilos.exibir_textos()
     janela = tkinter.Tk()
 
+    opcoes_pagamento = estilos.forma_pagamento()
+
     def calcular_resultado():
-        resultado = calcular_valor(entrada_valor, entrada_opcao)
+        resultado = calcular_valor(entrada_valor, entrada_opcao, opcoes_pagamento)
         janela_resultado.config(text=resultado,
                                 fg='dark red')
 
