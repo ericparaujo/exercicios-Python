@@ -4,7 +4,8 @@ def estilos_fontes():
         'titulo':('arial', 18, 'bold'),
         'texto1':('arial', 14, 'bold'),
         'texto2':('arial', 14),
-        'botao':('arial', 16, 'bold')
+        'botao':('arial', 16, 'bold'),
+        'resultado':('arial', 20, 'bold')
     }
 
 
@@ -17,3 +18,8 @@ def exibir_textos():
     }
 
 
+def forma_pagamento():
+    return ['pagamento a vista no dinheiro',
+            'pagamento a vista no cartao',
+            'pagamento parcelado no cartao [2x]',
+            'pagamento parcelado no cartao [+ vezes]']

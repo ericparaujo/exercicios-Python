@@ -1,10 +1,16 @@
 """
 Gerenciador de pagamentos
-Leia o preço de um produto e ofereça opções de pagamento (à vista, parcelado, etc.), aplicando descontos ou juros conforme escolha.
+Leia o preço de um produto e ofereça opções de pagamento (à vista, parcelado, etc.),
+aplicando descontos ou juros conforme escolha.
 """
 
-def entrada_dados():
-    while True:
+
+def entrada_dados(entrada_valor, entrada_opcao):
+    valor = float(entrada_valor.get())
+    opcao = str(entrada_opcao.get())
+
+
+    '''while True:
         try:
             valor = float(input('insira o valor de um produto: '))
             print('escolha uma opcao:\n'
@@ -20,28 +26,33 @@ def entrada_dados():
 
 
         except ValueError:
-            continue
+            continue'''
+
+    return valor, opcao
 
 
-def calcular_valor():
-    valor, opcao = entrada_dados()
+def calcular_valor(entrada_valor, entrada_opcao):
+    valor, opcao = entrada_dados(entrada_valor,entrada_opcao)
+    forma_pagamento = ['pagamento a vista no dinheiro',
+            'pagamento a vista no cartao',
+            'pagamento parcelado no cartao [2x]',
+            'pagamento parcelado no cartao [+ vezes]']
 
     try:
-        match opcao:
-            case 1:
-                total = valor - (valor * 0.05)
-                return total
-            case 2:
-                total = valor
-                return total
-            case 3:
-                total = valor + (valor * 0.05)
-                return total
-            case 4:
-                total = valor + (valor * 0.08)
-                return total
-            case _:
-                print('opcao invalida')
+        if opcao == forma_pagamento[0]:
+            total = valor - (valor * 0.05)
+            return f'Total a pagar: {total:.2f}'
+        if opcao == forma_pagamento[1]:
+            total = valor
+            return f'Total a pagar: {total:.2f}'
+        if opcao == forma_pagamento[2]:
+            total = valor + (valor * 0.05)
+            return f'Total a pagar: {total:.2f}'
+        if opcao == forma_pagamento[3]:
+            total = valor + (valor * 0.08)
+            return f'Total a pagar: {total:.2f}'
+            #case _:
+                #print(opcao)
 
     except ValueError:
         print('opcao invalida!')
@@ -49,4 +60,4 @@ def calcular_valor():
 
 
 
-print(f'valor total: {calcular_valor()}')
+#print(f'valor total: {calcular_valor()}')
