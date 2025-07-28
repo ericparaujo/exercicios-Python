@@ -5,7 +5,7 @@ Olá! 👋 Sou o Eric, desenvolvedor entusiasta do Rio de Janeiro, e este reposi
 ## 🗂 Estrutura do Repositório
 
 * `curso em video/`: exercícios do curso "Python para Iniciantes" (Curso em Vídeo, Gustavo Guanabara).
-* `intermediate_exercises/`: desafios de nível intermediário para praticar conceitos de OOP.
+* `intermediate_exercises/`: desafios de nível intermediário para praticar.
 
 ## 🐍 Por que Python?
 
