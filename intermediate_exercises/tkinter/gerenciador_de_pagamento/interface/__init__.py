@@ -35,9 +35,10 @@ def janela_principal():
                   font=fonte['texto1'], width=9))
     entrada_valor.place(x=220, y=120)
 
-    entrada_opcao = (Combobox(janela,
+    entrada_opcao = Combobox(janela,
                   values=estilos.forma_pagamento(),
-                  font=fonte['texto1']))
+                  font=fonte['texto1'],
+                  state='readonly')
     entrada_opcao.place(x=220, y=180, width=420)
 
     janela_resultado = tkinter.Label(janela,

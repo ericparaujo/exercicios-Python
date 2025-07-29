@@ -23,3 +23,6 @@ def forma_pagamento():
             'pagamento a vista no cartao',
             'pagamento parcelado no cartao [2x]',
             'pagamento parcelado no cartao [+ vezes]']
+
+def mensagem_erro():
+    return ('erro')
