@@ -3,7 +3,7 @@
 Olá! 👋 Sou o Eric, desenvolvedor entusiasta do Rio de Janeiro, e este repositório é meu **diário de evolução em Python**. Aqui compartilho **exercícios práticos** que faço para aprender e me aperfeiçoar. 
 Cada pasta neste repositório representa um conjunto de desafios ou projetos que me ajudam a crescer como programador de forma gradual e divertida.
 
-
+ 
 ## 🗂 Estrutura do Repositório
 
 * `curso em video/`: exercícios do curso "Python para Iniciantes" (Curso em Vídeo, Gustavo Guanabara).
