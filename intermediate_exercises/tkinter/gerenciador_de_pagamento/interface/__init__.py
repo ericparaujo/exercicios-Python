@@ -53,11 +53,7 @@ def janela_principal():
                    width=20, height=2,
                    command=calcular_resultado).pack(pady=40, side="bottom", )
 
-
-
     janela.mainloop()
-
-
 
 
 if __name__ == '__main__':
