@@ -1,10 +1,26 @@
+"""
+Arquivo principal do programa.
+Cria a janela gráfica do gerenciador de pagamentos com botões, campos e menus.
+É o que o usuário vê quando abre o programa.
+"""
+
 import tkinter
 from tkinter.ttk import Combobox
 import estilos
 from exercicios2.gerenciador_de_pagamento.gerenciador_pagamento import calcular_valor
 
 
-def janela_principal():
+def janela_principal() -> None:
+    """
+    Cria e configura a janela principal do programa.
+    :parameters:
+    - Define tamanho, título e comportamento da janela
+    - Adiciona textos explicativos ("Valor do produto", etc.)
+    - Cria campo para digitar o valor e menu para selecionar pagamento
+    - Adiciona botão "Calcular" que mostra o resultado
+    - Mantém a janela aberta até o usuário fechar
+    """
+
     fonte = estilos.estilos_fontes()
     texto = estilos.exibir_textos()
     janela = tkinter.Tk()
