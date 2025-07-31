@@ -25,7 +25,6 @@ def entrada_dados(entrada_valor, entrada_opcao):
     except ValueError or TypeError:
         messagebox.showerror('ERRO', mensagem[2])
 
-
     return valor, opcao
 
 
