@@ -1,4 +1,6 @@
 import tkinter
+from tkinter.ttk import Combobox
+
 
 def tela_principal():
     janela = tkinter.Tk()
@@ -29,6 +31,42 @@ def tela_principal():
     tkinter.Label(container2,
                   text='escolha uma opção'.center(115),
                   font=('arial', 16, 'bold')).grid(row=0,column=0)
+
+    # botoes de escolha
+    container3 = tkinter.Frame(janela,
+                               padx=10,
+                               pady=10)
+    container3.grid_columnconfigure((0, 1, 2, 3, 4, 5, 6), weight=1)
+    container3.grid(row=2,
+                    column=0,
+                    sticky='nsew')
+    tkinter.Button(container3,
+                   text=' Pedra ',
+                   font=('arial', 16)).grid(row = 0, column=2)
+    tkinter.Button(container3,
+                   text=' Papel ',
+                   font=('arial', 16)).grid(row=0, column=3)
+    tkinter.Button(container3,
+                   text='Tesoura',
+                   font=('arial', 16)).grid(row=0, column=4)
+
+    tkinter.Label(container3,
+                  text='O Resultado é:',
+                  font=('arial', 16)).grid(row=4, column=3, pady=50)
+
+
+
+    container4 = tkinter.Frame(janela,
+                               padx=10,
+                               pady=10)
+    container4.grid(row=3,
+                    column=0,
+                    sticky='nsew')
+    tkinter.Label(container4,
+                  text='',
+                  bg='blue',
+                  font=('arial', 16)).grid(padx=100, pady=1, )
+
 
 
 
