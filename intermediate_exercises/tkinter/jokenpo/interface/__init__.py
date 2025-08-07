@@ -32,7 +32,7 @@ def tela_principal():
                   text='escolha uma opção'.center(115),
                   font=('arial', 16, 'bold')).grid(row=0,column=0)
 
-    # botoes de escolha
+    # botoes de escolha do usuario
     container3 = tkinter.Frame(janela,
                                padx=10,
                                pady=10)
@@ -50,11 +50,13 @@ def tela_principal():
                    text='Tesoura',
                    font=('arial', 16)).grid(row=0, column=4)
 
+    # escolha do sistema
     tkinter.Label(container3,
-                  text='O Resultado é:',
+                  text='Eu escolhi:',
                   font=('arial', 16)).grid(row=4, column=3, pady=50)
-
-
+    tkinter.Label(container3,
+                  text='aparece o random aqui',
+                  font=('arial', 16)).grid(row=5, column=3)
 
     container4 = tkinter.Frame(janela,
                                padx=10,
@@ -63,9 +65,9 @@ def tela_principal():
                     column=0,
                     sticky='nsew')
     tkinter.Label(container4,
-                  text='',
+                  text='aparece se ganhou ou perdeu',
                   bg='blue',
-                  font=('arial', 16)).grid(padx=100, pady=1, )
+                  font=('arial', 16)).grid(padx=250, pady=1, )
 
 
 
