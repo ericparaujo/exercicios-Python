@@ -12,6 +12,14 @@ def escolha_jogador():
           '(3) tesoura\n')
 
     escolha = int(input('escolha uma opcao: '))
+
+    match escolha:
+        case 1:
+            escolha = 'pedra'
+        case 2:
+            escolha = 'papel'
+        case 3:
+            escolha = 'tesoura'
     return escolha
 
 
@@ -19,13 +27,31 @@ def escolha_cpu():
     JOKENPO = ('pedra', 'papel', 'tesoura') # Variavel constante em maiuscula (PEP 8)
     sorteio = choice(JOKENPO)
     print(sorteio)
+    return sorteio
+
 
 
 def comparar_jogada():
-    if escolha_jogador() == 1 and escolha_cpu() == 'pedra':
+    sorteio = escolha_cpu()
+    minha_escolha = escolha_jogador()
+
+    if minha_escolha == sorteio:
         print('empatou')
-    else:
-        print('foi diferente')
+    elif minha_escolha == 'pedra' and sorteio == 'papel':
+        print('voce perdeu')
+    elif minha_escolha == 'pedra' and sorteio == 'tesoura':
+        print('voce ganhou')
+    elif minha_escolha == 'papel' and sorteio == 'pedra':
+        print('voce ganhou')
+    elif minha_escolha == 'papel' and sorteio == 'tesoura':
+        print('voce perdeu')
+    elif minha_escolha == 'tesoura' and sorteio == 'pedra':
+        print('voce perdeu')
+    elif minha_escolha == 'tesoura' and sorteio == 'papel':
+        print('voce ganhou')
+
+
+
 
 
 comparar_jogada()
