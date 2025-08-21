@@ -5,27 +5,15 @@ Implemente um jogo onde o usuário escolhe pedra, papel ou tesoura, o computador
 """
 from random import choice
 
-def escolha_jogador():
-    print('JOKENPO'.center(20))
-    print('(1) pedra\n'
-          '(2) papel\n'
-          '(3) tesoura\n')
 
-    escolha = int(input('escolha uma opcao: '))
-
-    match escolha:
-        case 1:
-            escolha = 'pedra'
-        case 2:
-            escolha = 'papel'
-        case 3:
-            escolha = 'tesoura'
+def escolha_jogador(escolha):
+    print(escolha)
     return escolha
 
 
 def escolha_cpu():
-    JOKENPO = ('pedra', 'papel', 'tesoura') # Variavel constante em maiuscula (PEP 8)
-    sorteio = choice(JOKENPO)
+    _JOKENPO = ('pedra', 'papel', 'tesoura') # Variavel constante em maiuscula (PEP 8)
+    sorteio = choice(_JOKENPO)
     print(sorteio)
     return sorteio
 
@@ -53,5 +41,5 @@ def comparar_jogada():
 
 
 
-
-comparar_jogada()
+if __name__ == '__main__':
+    comparar_jogada()

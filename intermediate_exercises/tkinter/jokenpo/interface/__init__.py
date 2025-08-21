@@ -1,5 +1,6 @@
 import tkinter
-from tkinter.ttk import Combobox
+from exercicios2.jokenpo.jokenpo import escolha_jogador
+#from tkinter.ttk import Combobox
 
 
 def tela_principal():
@@ -42,13 +43,16 @@ def tela_principal():
                     sticky='nsew')
     tkinter.Button(container3,
                    text=' Pedra ',
-                   font=('arial', 16)).grid(row = 0, column=2)
+                   font=('arial', 16),
+                   command=escolha_jogador('pedra')).grid(row = 0, column=2)
     tkinter.Button(container3,
                    text=' Papel ',
-                   font=('arial', 16)).grid(row=0, column=3)
+                   font=('arial', 16),
+                   command=escolha_jogador('papel')).grid(row=0, column=3)
     tkinter.Button(container3,
                    text='Tesoura',
-                   font=('arial', 16)).grid(row=0, column=4)
+                   font=('arial', 16),
+                   command=escolha_jogador('tesoura')).grid(row=0, column=4)
 
     # escolha do sistema
     tkinter.Label(container3,
