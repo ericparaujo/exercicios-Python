@@ -1,83 +1,51 @@
 import tkinter
-from exercicios2.jokenpo.jokenpo import escolha_jogador
-#from tkinter.ttk import Combobox
+from tkinter import Tk
+
+#from exercicios2.jokenpo.jokenpo import minha_escolha
 
 
-def tela_principal():
-    janela = tkinter.Tk()
+def painel_principal():
+    janela = Tk()
 
     janela.geometry('800x600')
-    janela.title('PEDRA, PAPEL E TESOURA'.center(220))
     janela.resizable(False, False)
+    janela.title(' PEDRA, PAPEL, TESOURA'.center(180))
 
-    #divisao da parte superior da janela com titulo e subtitulo
-    container = tkinter.Frame(janela,
-                              bg='blue',
-                              padx=10,
-                              pady=10)
-    container.grid(row=0,
-                   column=0,
-                   sticky='nsew')
-    tkinter.Label(container,
-                  text='Vamos jogar pedra, papel e tesoura?'.center(69),
-                  font=('times new roman', 24, 'bold'),
-                  bg='yellow').grid(row=0,column=0)
+    container1 = tkinter.Frame(janela, padx=10, pady=10)
+    container1.grid(row=0, column=0, sticky='nsew')
+    container2 = tkinter.Frame(janela, pady=10, padx=10)
+    container2.grid(row=1, column=0, sticky='nsew')
 
-    container2 = tkinter.Frame(janela,
-                               padx=10,
-                               pady=30)
-    container2.grid(row=1,
-                    column=0,
-                    sticky='nsew')
-    tkinter.Label(container2,
-                  text='escolha uma opção'.center(115),
-                  font=('arial', 16, 'bold')).grid(row=0,column=0)
 
-    # botoes de escolha do usuario
-    container3 = tkinter.Frame(janela,
-                               padx=10,
-                               pady=10)
-    container3.grid_columnconfigure((0, 1, 2, 3, 4, 5, 6), weight=1)
-    container3.grid(row=2,
-                    column=0,
-                    sticky='nsew')
-    tkinter.Button(container3,
-                   text=' Pedra ',
+    tkinter.Label(container1,
+                    text='escolha uma opcao:'.center(50),
+                    font= ('arial', 18)).grid(row=0, column=0)
+    tkinter.Button(container2,
+                   text='pedra',
+                   font= ('arial', 16),
+                   command=lambda: escolha('pedra')).grid(row=0, column=0)
+    tkinter.Button(container2,
+                   text='papel',
                    font=('arial', 16),
-                   command=escolha_jogador('pedra')).grid(row = 0, column=2)
-    tkinter.Button(container3,
-                   text=' Papel ',
+                   command=lambda: escolha('papel')).grid(row=0, column=1)
+    tkinter.Button(container2,
+                   text='tesoura',
                    font=('arial', 16),
-                   command=escolha_jogador('papel')).grid(row=0, column=3)
-    tkinter.Button(container3,
-                   text='Tesoura',
-                   font=('arial', 16),
-                   command=escolha_jogador('tesoura')).grid(row=0, column=4)
-
-    # escolha do sistema
-    tkinter.Label(container3,
-                  text='Eu escolhi:',
-                  font=('arial', 16)).grid(row=4, column=3, pady=50)
-    tkinter.Label(container3,
-                  text='aparece o random aqui',
-                  font=('arial', 16)).grid(row=5, column=3)
-
-    container4 = tkinter.Frame(janela,
-                               padx=10,
-                               pady=10)
-    container4.grid(row=3,
-                    column=0,
-                    sticky='nsew')
-    tkinter.Label(container4,
-                  text='aparece se ganhou ou perdeu',
-                  bg='blue',
-                  font=('arial', 16)).grid(padx=250, pady=1, )
-
+                   command=lambda: escolha('tesoura')).grid(row=0, column=2)
 
 
 
     janela.mainloop()
 
 
+
+def escolha(texto=None):
+    minha_escolha = texto
+
+    print(texto)
+    return minha_escolha
+
+
+
 if __name__ == '__main__':
-    tela_principal()
+    painel_principal()

@@ -4,42 +4,31 @@ Implemente um jogo onde o usuário escolhe pedra, papel ou tesoura, o computador
 
 """
 from random import choice
-
-
-def escolha_jogador(escolha):
-    print(escolha)
-    return escolha
-
+from interface import painel_principal
 
 def escolha_cpu():
-    _JOKENPO = ('pedra', 'papel', 'tesoura') # Variavel constante em maiuscula (PEP 8)
-    sorteio = choice(_JOKENPO)
-    print(sorteio)
-    return sorteio
+    escolha_random = choice(("pedra", "papel", "tesoura"))
+    return escolha_random
 
 
-
-def comparar_jogada():
-    sorteio = escolha_cpu()
-    minha_escolha = escolha_jogador()
-
-    if minha_escolha == sorteio:
-        print('empatou')
-    elif minha_escolha == 'pedra' and sorteio == 'papel':
-        print('voce perdeu')
-    elif minha_escolha == 'pedra' and sorteio == 'tesoura':
-        print('voce ganhou')
-    elif minha_escolha == 'papel' and sorteio == 'pedra':
-        print('voce ganhou')
-    elif minha_escolha == 'papel' and sorteio == 'tesoura':
-        print('voce perdeu')
-    elif minha_escolha == 'tesoura' and sorteio == 'pedra':
-        print('voce perdeu')
-    elif minha_escolha == 'tesoura' and sorteio == 'papel':
-        print('voce ganhou')
+def minha_escolha():
+    painel_principal()
+    escolha = painel_principal()
+    return escolha
+'''
+    if escolha == 1:
+        escolha = 'pedra'
+    elif escolha == 2:
+        escolha = 'papel'
+    elif escolha == 3:
+        escolha = 'tesoura'
+    else:
+        print('opcao invalid, tente novamente')
+'''
 
 
 
 
-if __name__ == '__main__':
-    comparar_jogada()
+
+
+print(minha_escolha())
